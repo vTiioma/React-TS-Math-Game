@@ -1,3 +1,72 @@
 .App {
-  text-align: center;
+}
+
+.gameBoard {
+  overflow: hidden;
+  widows: 100%;
+  height: 50rem;
+}
+
+@keyframes enter-up {
+  0% {
+    top: 50rem;
+  }
+  100% {
+    top: 0rem;
+  }
+}
+
+@keyframes enter-down {
+  0% {
+    bottom: 50rem;
+  }
+  100% {
+    bottom: 0rem;
+  }
+}
+
+@keyframes exit-right {
+  0% {
+    left: 0rem;
+  }
+  100% {
+    left: 50rem;
+  }
+}
+
+@keyframes exit-left {
+  0% {
+    right: 0rem;
+  }
+  100% {
+    right: 50rem;
+  }
+}
+
+.enter-up {
+  animation: enter-up 0.37s ease-out;
+  top: 0rem;
+}
+
+.enter-down {
+  animation: enter-down 0.37s ease-out;
+  bottom: 0rem;
+}
+
+.exit-right {
+  animation: exit-right 0.37s ease-out;
+  left: 50rem;
+}
+
+.exit-left {
+  animation: exit-left 0.37s ease-out;
+  right: 50rem;
+}
+
+.delete-btn {
+  color: red !important;
+
+  &:hover {
+    color: rgba($color: red, $alpha: 0.5) !important;
+  }
 }
