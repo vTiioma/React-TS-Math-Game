@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import './App.scss';
+import Card from './Card';
 
 const App: React.FC = () => {
   const getRandomNumber = (min: number, max: number) =>
@@ -36,15 +38,15 @@ const App: React.FC = () => {
 
   return (
     <div className='App'>
-      <div className='gameBoard'>
-        <div className='container row'>
-          <div className='icon'>
-            questions.map(item => (
-            <div>
-              <div className='card-content'>
-                <div className='card-title'>{`${card.first} + ${card.second}`}</div>
-                <div className='card-content'>{card.answer}</div>
-                <div className='card-action'>
+      <div className='container game'>
+        <div className='gameBoard'>
+          <div className='container row width-25-percent text-align-center'>
+            {questions.map((item, key) => (
+              <div key={key}>
+                <Card
+                  title={`${card.first} + ${card.second}`}
+                  content={`${card.answer}`}
+                >
                   <a
                     href='#'
                     onClick={e => {
@@ -66,10 +68,9 @@ const App: React.FC = () => {
                   >
                     No
                   </a>
-                </div>
+                </Card>
               </div>
-            </div>
-            ))
+            ))}
           </div>
         </div>
       </div>
